@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary" style="padding-top : 100px">
+    <ion-title>Consulta Movil BI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>
+      Te damos la bienvenida
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input type="text"  [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item lines ="full">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password"  [(ngModel)]="password"></ion-input>
+  </ion-item>
+  <ion-button style=" padding-top: 10px; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;" (click)="login()" expand="block">Acceder</ion-button>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+</ion-card>
+</ion-content>

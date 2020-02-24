@@ -1,0 +1,7 @@
+{
+  "name": "proappbi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

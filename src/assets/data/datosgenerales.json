@@ -1,0 +1,31 @@
+{
+    "username": "87752179",
+    "nombre" : "Jorge Hassan",
+    "depositoinversion": "0.14",
+    "creditoprestamo": "17,698.54",
+    "productos" :[ 
+        {
+        
+            "idproducto" : "1",
+            "tipo": "D",
+            "nombreprod" : "Cuentas de deposito",
+            "disponible" : "0.06",
+            "saldototal" : "0.14"
+        },
+        {
+            "idproducto" : "2",
+            "tipo": "C",
+            "nombreprod" : "Tarjetas de credito",
+            "disponible" : "3,386.72",
+            "saldototal" : "1,937.74"
+        },
+        {
+            "idproducto" : "3",
+            "tipo": "P",
+            "nombreprod" : "Prestamos",
+            "disponible" : "",
+            "saldototal" : "15,760.80"
+        }
+    ]
+    
+}
