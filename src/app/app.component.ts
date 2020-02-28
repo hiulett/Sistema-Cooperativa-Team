@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  navigate : any;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -19,6 +20,7 @@ export class AppComponent {
     private authService: AuthenticationService,
     private router: Router
   ) {
+    this.sideMenu()
     this.initializeApp();
   }
 
@@ -40,5 +42,26 @@ export class AppComponent {
       });
 
     });
+  }
+  sideMenu()
+  {
+    this.navigate =
+    [
+      {
+        title : "dashboard",
+        url   : "/dashboard",
+        icon  : "home"
+      },
+      {
+        title : "dashboard",
+        url   : "/dashboard",
+        icon  : "chatboxes"
+      },
+      {
+        title : "Contacts",
+        url   : "/contacts",
+        icon  : "contacts"
+      },
+    ]
   }
 }

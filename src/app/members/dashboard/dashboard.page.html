@@ -1,11 +1,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out"></ion-icon>
-      </ion-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Consulta Movil BI</ion-title>
+    <ion-button slot="end" (click)="logout()">
+      <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 <ion-content>
