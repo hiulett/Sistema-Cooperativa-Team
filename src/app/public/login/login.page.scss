@@ -1,0 +1,42 @@
+
+.container{
+
+    text-align: center;
+    // background-image: url("/../../assets/images/background.jpg");
+    --background: steelblue;
+    --color: white;
+     //background-size: cover;
+}
+
+.logintoolbar{
+
+    padding-top: 20px;
+    font-size: 18px bold;
+    --background: steelblue;
+    --color: white;
+ 
+    
+}
+
+.logincard{
+    background: dodgerblue;
+    color: white;
+}
+
+.loginbutton {
+    padding-top: 5px; 
+    padding-left: 50px; 
+    padding-right: 50px; 
+    padding-bottom: 5px;
+    --background: steelblue;
+    //height: 10px;
+    font-size: 11px;
+    font-style: bold;
+}
+
+.logininputs{
+    text-align: center;
+    font-size: 15px;
+    
+    
+}
