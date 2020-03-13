@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Observer } from 'rxjs';
-import { UsersData, dashboard, productos, RootObject, CommonResponse } from './interfaces';
+import { UsersData, dashboard, productos, RootObject, CommonResponse, Movimiento, RootObjectDetails } from './interfaces';
 import { HTTP } from '@ionic-native/http/ngx';
 import { Platform } from '@ionic/angular';
 
@@ -21,6 +21,8 @@ export class EventsService {
 
   private rootObjecturl = 'http://190.140.48.74/api/Customers/GetUserAccounts?Id=12221';
 
+  private detailurl = 'http://190.140.48.74/api/Customers/GetUserAccountsTransactionsDetails';
+
   constructor(private http: HttpClient, private nativeHttp: HTTP,
     private plt: Platform) { }
 
@@ -28,6 +30,12 @@ export class EventsService {
   public  ValidateUser(username: string, password: string): Observable<CommonResponse>{
   
     return this.http.get<CommonResponse>(this.urlapiuser +`?UserName=${username}&UserPassword=${password}`);
+
+  }
+
+  public  GetUserAccountsTransactionsDetails(productnumber: string): Observable<RootObjectDetails>{
+  
+    return this.http.get<RootObjectDetails>(this.urlapiuser +`?productnumber=${productnumber}`);
 
   }
 
