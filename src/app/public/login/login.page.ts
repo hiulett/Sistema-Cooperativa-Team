@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 
 import { UsersData, CommonResponse } from 'src/app/interfaces';
 import { EventsService } from 'src/app/events.service';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,9 @@ export class LoginPage implements OnInit {
   usersData: UsersData[] = [];
 
   constructor(private authService: AuthenticationService,
-    private eventService: EventsService) { }
+    private eventService: EventsService, 
+    public loadingController: LoadingController,
+    public alertController: AlertController) { }
 
    ngOnInit() {
    
@@ -30,43 +33,47 @@ export class LoginPage implements OnInit {
 
    async login() {
 
+    const loading = await this.loadingController.create({
+      message: 'Please wait...',
+      duration: 2000
+    });
+    await loading.present();
+
+ 
     this.Response =  await this.eventService.ValidateUser(this.username, this.password).toPromise();
     this.islogin  = this.Response.IsLogin
     
+    if(this.islogin === 'true'){ 
 
       this.authService.login(this.username, this.password);
-
-    
-  }
-
-  userExists(username: string, password: string){
-  
-    let usersdt = this.usersData;
-    console.log(usersdt);
-  
-    if(this.usersData.length < 1){
       
-      return false;
-     
-  
+       const { role, data } = await loading.onDidDismiss();
+
+      this.username = '';
+      this.password = '';
+    
+
     } else {
-      var i = 0
-      for(i = 0; i < usersdt.length; i++){
 
-     
-        if(usersdt[i].username === username && usersdt[i].password === password ){
+      const { role, data } = await loading.onDidDismiss();
 
-         
-          return true;
-          
-        } 
-      }
+      await this.presentAlertWrongUser();
 
-      
-      return false;
-    
-    }
+      this.password = '';
 
+    } 
   }
 
+  async presentAlertWrongUser() {
+    const alert = await this.alertController.create({
+      header: 'Acceso incorrecto',
+      message: 'Por favor colocar el usuario y password.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+
+  
 }

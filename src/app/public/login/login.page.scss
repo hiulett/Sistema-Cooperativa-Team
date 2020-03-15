@@ -1,0 +1,58 @@
+
+.container{
+
+    text-align: center;
+    --background: #C2DFFF;
+    --color: white;
+}
+
+.logintoolbar{
+
+    padding-top: 20px;
+    font-size: 18px bold;
+    --background: steelblue;
+    --color: white;
+ 
+    
+}
+
+.logincard{
+    background: #1e90ff;
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 30px;
+}
+
+.loginbutton {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+    --background: #2a52be;
+    font-size: 13px;
+}
+
+.logininputs{
+    text-align: center;
+    font-size: 15px;
+    
+    
+}
+
+.imagederrama{
+    border-radius: 50px;
+    height: 100px;
+}
+
+.toppad{
+    padding-bottom: 150px;
+}
+
+.itemsinput{
+    border-radius: 30px!important;
+    font-size: .9em;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+    border-bottom: 0!important;
+    box-shadow: none!important;
+}
