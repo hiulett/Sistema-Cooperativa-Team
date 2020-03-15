@@ -48,37 +48,5 @@
 
 </ion-item>
 
-<ion-grid>
-  <ion-row>
-  <ion-col *ngFor="let x of productosArr" size="12">
-  
-      <ion-card (click)="navigate(x.IdProducto)">
-        <ion-card-header>
-          <ion-card-title style="font-size: 15px;"> {{ x.DescripcionProducto }}</ion-card-title>
-        </ion-card-header>
-        <ion-item>
-          <ion-grid>
-            <ion-row>
-              <ion-col size="6">
-                <ion-label color="dark" style="font-size: 15px;">Disponible</ion-label>
-              </ion-col>
-              <ion-col size="6">
-                <ion-label color="primary" style="font-size: 15px;">{{ x.Disponible }}</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="6">
-                <ion-label color="dark" style="font-size: 15px;">Saldo Total</ion-label>
-              </ion-col>
-              <ion-col size="6">
-                <ion-label color="primary" style="font-size: 15px;">{{ x.SaldoTotal }}</ion-label>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-      </ion-card>
-  </ion-col>
-</ion-row>
-</ion-grid>
 
 </ion-content>

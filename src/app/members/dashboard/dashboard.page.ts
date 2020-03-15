@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { dashboard, productos, ResumenModel, RootObject, UserProductsModel } from 'src/app/interfaces';
 import { EventsService } from 'src/app/events.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,7 @@ export class DashboardPage implements OnInit {
 
 
   constructor(private authService: AuthenticationService, 
-    private eventService: EventsService) { }
+    private eventService: EventsService, private router: Router) { }
 
   async ngOnInit() {
 
@@ -43,6 +44,10 @@ export class DashboardPage implements OnInit {
 
     this.authService.logout();
   }
+  navigate(id: string){
+    console.log('id : ' || id);
+    this.router.navigate(['/detail/', id ])
+  };
 
   
 
