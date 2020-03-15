@@ -21,6 +21,8 @@ export class EventsService {
 
   private rootObjecturl = 'http://190.140.48.74/api/Customers/GetUserAccounts?Id=12221';
 
+  private urlDash = 'assets/data/dashdata.json';
+
   constructor(private http: HttpClient, private nativeHttp: HTTP,
     private plt: Platform) { }
 
@@ -44,7 +46,8 @@ export class EventsService {
   }
   
    public getRootObject(): Observable<RootObject>{
-    return this.http.get<RootObject>(this.rootObjecturl);
+   return this.http.get<RootObject>(this.rootObjecturl);
+  // return this.http.get<RootObject>(this.urlDash);
   } 
 
 }

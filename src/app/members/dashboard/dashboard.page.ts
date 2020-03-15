@@ -4,6 +4,8 @@ import { dashboard, productos, ResumenModel, RootObject, UserProductsModel } fro
 import { EventsService } from 'src/app/events.service';
 import { Observable } from 'rxjs';
 
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -22,7 +24,8 @@ export class DashboardPage implements OnInit {
 
 
   constructor(private authService: AuthenticationService, 
-    private eventService: EventsService) { }
+    private eventService: EventsService,
+    public alertController: AlertController) { }
 
   async ngOnInit() {
 
@@ -39,9 +42,33 @@ export class DashboardPage implements OnInit {
 
   }
 
-  logout() {
+  async logout() {
 
-    this.authService.logout();
+   
+
+    const alert = await this.alertController.create({
+      header: 'Salir',
+      message: 'Esta seguro que desea salir de la app?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+           
+          }
+        }, {
+          text: 'Si',
+          handler: () => {
+           
+
+            this.authService.logout();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   
