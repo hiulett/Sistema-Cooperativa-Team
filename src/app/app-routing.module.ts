@@ -14,11 +14,20 @@ const routes: Routes = [
     loadChildren: () => import('./public/register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'detail/:id',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
     path: 'members',
     canActivate: [AuthGuardService],
     loadChildren: () => import('./members/member-routing.module').then(m => m.MemberRoutingModule)
 
   },
+  {
+    path: 'dasboard',
+    loadChildren: () => import('./members/dashboard/dashboard-routing.module').then( m => m.DashboardPageRoutingModule)
+  },
+
  
 ];
 

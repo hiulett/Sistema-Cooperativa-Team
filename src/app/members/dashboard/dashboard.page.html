@@ -52,10 +52,11 @@
 <ion-grid>
   <ion-row>
   <ion-col *ngFor="let x of productosArr" size="12">
-  
-      <ion-card>
-        <ion-card-header class="cardheader">
-          <ion-label> {{ x.DescripcionProducto }}</ion-label>
+
+      <ion-card (click)="navigate(x.IdProducto)">
+        <ion-card-header>
+          <ion-card-title style="font-size: 15px;"> {{ x.DescripcionProducto }}</ion-card-title>
+
         </ion-card-header>
         <ion-item>
           <ion-grid>

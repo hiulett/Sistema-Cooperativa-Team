@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { dashboard, productos, ResumenModel, RootObject, UserProductsModel } from 'src/app/interfaces';
 import { EventsService } from 'src/app/events.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { AlertController } from '@ionic/angular';
 
@@ -24,8 +25,10 @@ export class DashboardPage implements OnInit {
 
 
   constructor(private authService: AuthenticationService, 
+
     private eventService: EventsService,
-    public alertController: AlertController) { }
+    public alertController: AlertController, private router: Router) { }
+
 
   async ngOnInit() {
 
@@ -70,6 +73,10 @@ export class DashboardPage implements OnInit {
 
     await alert.present();
   }
+  navigate(id: string){
+    console.log('id : ' || id);
+    this.router.navigate(['/detail/', id ])
+  };
 
   
 

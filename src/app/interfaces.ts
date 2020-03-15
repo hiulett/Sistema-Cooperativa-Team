@@ -20,6 +20,12 @@ export interface productos {
     saldototal: string
 }
 
+export interface RootObjectDetails {
+  Header: Header;
+  ResumenModelList: ResumenModelList[];
+  ResumenModel?: any;
+}
+
 export interface RootObject {
   Header: Header;
   ResumenModelList?: ResumenModel[];
@@ -62,4 +68,16 @@ export interface ResumenModel {
   DepositoInversion: number;
   CreditoPrestamo: number;
   UserProductList: UserProductsModel[];
+}
+
+export interface ResumenModelList {
+  Detalle: string;
+  Retiro: number;
+  Depositos: number;
+  Saldo: number;
+  FechaCreacion: Date;
+  FechaModificacion: Date;
+  CreadoPor: string;
+  IdMovimiento: number;
+  IdProducto: string;
 }
