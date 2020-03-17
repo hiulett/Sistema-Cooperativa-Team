@@ -1,25 +1,24 @@
-<ion-header>
-  <ion-toolbar color="primary" style="padding-top : 100px">
-    <ion-title>Consulta Movil BI</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
-<ion-card>
+
+<ion-content padding class="container" >
+  <div class="toppad"></div>
+  <img src="assets/images/derramaimage.jpg" class="imagederrama" alt="logo">
+
+<ion-card class="logincard">
   <ion-card-header>
-    <ion-card-subtitle>
-      Te damos la bienvenida
+    <ion-card-subtitle style="color:white;">
+     App BI
     </ion-card-subtitle>
   </ion-card-header>
-  <ion-item lines="full">
-    <ion-label position="floating">Usuario</ion-label>
-    <ion-input type="text"  [(ngModel)]="username"></ion-input>
+  <ion-item class="itemsinput">
+   
+    <ion-input type="text"  [(ngModel)]="username" class="logininputs"  placeholder="Usuario"><ion-icon  name="person"></ion-icon></ion-input>
   </ion-item>
-  <ion-item lines ="full">
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password"  [(ngModel)]="password"></ion-input>
+  <ion-item class="itemsinput">
+  
+    <ion-input type="password"  [(ngModel)]="password" class="logininputs"  placeholder="Contraseña"><ion-icon name="lock-closed"></ion-icon></ion-input>
   </ion-item>
-  <ion-button style=" padding-top: 10px; padding-left: 20px; padding-right: 20px; padding-bottom: 10px;" (click)="login()" expand="block">Acceder</ion-button>
+  <ion-button class="loginbutton" (click)="login()" expand="block">Accesar</ion-button>
   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 </ion-card>
 </ion-content>

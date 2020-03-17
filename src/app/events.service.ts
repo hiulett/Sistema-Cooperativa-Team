@@ -23,6 +23,7 @@ export class EventsService {
 
   private detailurl = 'http://190.140.48.74/api/Customers/GetUserAccountsTransactionsDetails';
 
+
   constructor(private http: HttpClient, private nativeHttp: HTTP,
     private plt: Platform) { }
 
@@ -35,7 +36,7 @@ export class EventsService {
 
   public  GetUserAccountsTransactionsDetails(productnumber: string): Observable<RootObjectDetails>{
   
-    return this.http.get<RootObjectDetails>(this.urlapiuser +`?productnumber=${productnumber}`);
+    return this.http.get<RootObjectDetails>(this.detailurl +`?productnumber=${productnumber}`);
 
   }
 
@@ -52,7 +53,8 @@ export class EventsService {
   }
   
    public getRootObject(): Observable<RootObject>{
-    return this.http.get<RootObject>(this.rootObjecturl);
+   return this.http.get<RootObject>(this.rootObjecturl);
+  // return this.http.get<RootObject>(this.urlDash);
   } 
 
 }

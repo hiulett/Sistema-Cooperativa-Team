@@ -1,18 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ionbartool">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Consulta Movil BI</ion-title>
+    <ion-label>App BI</ion-label>
     <ion-button slot="end" (click)="logout()">
       <ion-icon slot="icon-only" name="log-out"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<ion-item>
+<ion-item class="separator1">
   <ion-text color="dark">
-    <h5>Te damos la bienvenida {{ nombreUsuario }}!</h5>
+    <ion-icon item-left name="person"></ion-icon>  Te damos la bienvenida {{ nombreUsuario }}!
   </ion-text>
 </ion-item>
 <ion-item>
@@ -35,12 +35,13 @@
     </ion-row>
   </ion-grid>
 </ion-item>
-<ion-item>
+<ion-item class="separator1">
   <ion-grid>
     <ion-row>
     <ion-col size="12" style="text-align: center;">
       <ion-text color="dark">
-        <ion-label color="dark" style="font-size: 15px;">Tus Productos</ion-label>
+        <ion-label color="dark" style="font-size: 15px;">Tus Productos <ion-icon item-left name="cube"></ion-icon></ion-label>
+        
       </ion-text>
     </ion-col>
   </ion-row>
@@ -51,10 +52,11 @@
 <ion-grid>
   <ion-row>
   <ion-col *ngFor="let x of productosArr" size="12">
-  
+
       <ion-card (click)="navigate(x.IdProducto)">
         <ion-card-header>
           <ion-card-title style="font-size: 15px;"> {{ x.DescripcionProducto }}</ion-card-title>
+
         </ion-card-header>
         <ion-item>
           <ion-grid>

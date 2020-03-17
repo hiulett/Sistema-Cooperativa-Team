@@ -5,6 +5,8 @@ import { EventsService } from 'src/app/events.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -23,7 +25,10 @@ export class DashboardPage implements OnInit {
 
 
   constructor(private authService: AuthenticationService, 
-    private eventService: EventsService, private router: Router) { }
+
+    private eventService: EventsService,
+    public alertController: AlertController, private router: Router) { }
+
 
   async ngOnInit() {
 
@@ -40,9 +45,33 @@ export class DashboardPage implements OnInit {
 
   }
 
-  logout() {
+  async logout() {
 
-    this.authService.logout();
+   
+
+    const alert = await this.alertController.create({
+      header: 'Salir',
+      message: 'Esta seguro que desea salir de la app?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+           
+          }
+        }, {
+          text: 'Si',
+          handler: () => {
+           
+
+            this.authService.logout();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
   navigate(id: string){
     console.log('id : ' || id);

@@ -13,14 +13,15 @@ import { IonicStorageModule } from '@ionic/storage'
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import { AgGridModule } from 'ag-grid-angular';
 import { HTTP } from '@ionic-native/http/ngx';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MenuComponent],
   entryComponents: [],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, 
-    IonicStorageModule.forRoot(), ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
+    IonicStorageModule.forRoot(), ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), AgGridModule.withComponents([]) ],
   providers: [
     StatusBar,
     HttpClientModule,
