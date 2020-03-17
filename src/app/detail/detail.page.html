@@ -1,52 +1,56 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ionbartool">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Consulta Movil BI</ion-title>
-    <ion-button slot="end">
+
+    <ion-label>App BI</ion-label>
+    <ion-button slot="end" (click)="logout()">
+
       <ion-icon slot="icon-only" name="log-out"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-item class="separator1">
+    <ion-text color="dark">
+      <ion-icon item-left name="person"></ion-icon>  Te damos la bienvenida {{ nombreUsuario }}!
+    </ion-text>
+  </ion-item>
 <ion-item>
-  <ion-text color="dark">
-    <h5>Te damos la bienvenida!</h5>
-  </ion-text>
+  <ion-item>
+    <ion-label>Productos</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+      <ion-select-option value="brown">Brown</ion-select-option>
+      <ion-select-option value="blonde">Blonde</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-item>
-<ion-item>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-label color="dark" style="font-size: 15px;">Depósito e inversiones</ion-label>
-      </ion-col>
-      <ion-col size="6">
-        <ion-label color="dark" style="font-size: 15px;">Créditos y préstamos</ion-label>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-label color="primary" style="text-align: center;"></ion-label>
-      </ion-col>
-      <ion-col size="6">
-        <ion-label color="primary" style="text-align: center;"></ion-label>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-item>
-<ion-item>
-  <ion-grid>
-    <ion-row>
-    <ion-col size="12" style="text-align: center;">
-      <ion-text color="dark">
-        <ion-label color="dark" style="font-size: 15px;">Tus Productos</ion-label>
-      </ion-text>
+<ion-grid>
+  <ion-row>
+		<ion-col size="4">Detalle</ion-col>
+    <ion-col size="2">Retiro</ion-col>
+    <ion-col size="3">Depositos</ion-col>
+		<ion-col size="2">Saldo</ion-col>
+	</ion-row>
+  <ion-row *ngFor="let valores of movimientos">
+    <ion-col size="4" size-md>
+      {{valores.Detalle}}
+    </ion-col>
+    <ion-col size="2" size-md>
+      {{valores.Retiro}}
+    </ion-col>
+    <ion-col size="3" size-md>
+      {{valores.Depositos}}
+    </ion-col>
+    <ion-col size="2" size-md>
+      {{valores.Saldo}}
+
     </ion-col>
   </ion-row>
-  </ion-grid>
 
-</ion-item>
-
-
+ 
+</ion-grid>
 </ion-content>
