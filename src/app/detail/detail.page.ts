@@ -12,6 +12,11 @@ export class DetailPage implements OnInit {
   id: any;
   root: RootObjectDetails
   movimientos : ResumenModelList[]
+  customPopoverOptions: any = {
+    header: 'Productos del Usuario',
+    subHeader: 'Selecciona tu producto',
+    message: 'Solo selecciona un producto'
+  };
 
   constructor(private eventService: EventsService, private activatedRoute: ActivatedRoute) {
     
@@ -24,6 +29,10 @@ export class DetailPage implements OnInit {
     console.log('id : ' || this.id);
     this.root = await this.eventService.GetUserAccountsTransactionsDetails(this.id).toPromise();
     this.movimientos = this.root.ResumenModelList
+  }
+
+  async logout() {
+
   }
 
 }
