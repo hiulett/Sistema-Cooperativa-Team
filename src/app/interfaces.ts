@@ -20,17 +20,19 @@ export interface productos {
     saldototal: string
 }
 
-export interface RootObjectDetails {
-  Header: Header;
-  ResumenModelList: ResumenModelList[];
-  ResumenModel?: any;
+
+
+
+
+export interface Error {
+  ErrorCode: number;
+  ErrorMessage: string;
+  Source?: any;
+  MethodName?: any;
+  StackTrace?: any;
 }
 
-export interface RootObject {
-  Header: Header;
-  ResumenModelList?: ResumenModel[];
-  ResumenModel: ResumenModel;
-}
+
 
 export interface CommonResponse {
    IsLogin: string;
@@ -72,12 +74,47 @@ export interface ResumenModel {
 
 export interface ResumenModelList {
   Detalle: string;
-  Retiro: number;
-  Depositos: number;
-  Saldo: number;
+  Monto: number;
+  TipoMovimiento: string;
+  TipoMovimientoId: number;
   FechaCreacion: Date;
   FechaModificacion: Date;
   CreadoPor: string;
   IdMovimiento: number;
   IdProducto: string;
 }
+
+
+/////////////////////////////////
+
+
+export interface ProductosModelList {
+  ProductoId: string;
+  ProductoDescripcion: string;
+  UserId: string;
+}
+
+export interface RootListaProductos {
+  Header: Header;
+  ProductosModelList: ProductosModelList[];
+  ProductosModel?: any;
+}
+
+export interface RootObjectDetails {
+  Header: Header;
+  ResumenModelList: ResumenModelList[];
+  ResumenModel?: any;
+}
+
+export interface RootObject {
+  Header: Header;
+  ResumenModelList?: ResumenModel[];
+  ResumenModel: ResumenModel;
+}
+
+export interface RootProductList {
+  Header: Header;
+  ResumenModelList?: any;
+  ResumenModel: ResumenModel;
+}
+
