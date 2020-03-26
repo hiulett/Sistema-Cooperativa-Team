@@ -19,7 +19,6 @@
     </ion-text>
   </ion-item>
 <ion-item>
-
   <ion-item>
     <ion-label>Productos</ion-label>
     <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
@@ -38,6 +37,7 @@
 		<ion-col size="2">Saldo</ion-col>
 	</ion-row>
   <ion-row *ngFor="let valores of movimientos">
+
     
       <ion-col size="4" size-md (click)="navigate(valores.IdMovimiento)">
         {{valores.Detalle}}
@@ -52,6 +52,7 @@
         {{valores.Saldo}}
       </ion-col>
     
+
   </ion-row>
 
  

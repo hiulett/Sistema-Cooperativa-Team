@@ -4,7 +4,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
 
-        applicationId "io.ionic.starter"
+      applicationId "io.ionic.starter"
+
 
         minSdkVersion 21
         targetSdkVersion 28
