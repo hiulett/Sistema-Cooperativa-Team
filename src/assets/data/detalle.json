@@ -1,0 +1,27 @@
+{
+    "descripcion": "PAGO A PRESTAMO",
+    "fecha": "20 FEB 2020",
+    "montoPagado": "198.72",
+    "desglose" : [
+        {
+            "descripcion": "Interes",
+            "monto": "81.90"
+        },
+        {
+            "descripcion": "FECI",
+            "monto": "0.00"
+
+        },
+        {
+            "descripcion": "Seguro",
+            "monto": "5.06"
+
+        },
+        {
+            "descripcion": "Capital",
+            "monto": "103.20"
+
+        }
+    ],
+    "estado" : "R"
+}

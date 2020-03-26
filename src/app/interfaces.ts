@@ -81,3 +81,16 @@ export interface ResumenModelList {
   IdMovimiento: number;
   IdProducto: string;
 }
+
+export interface DetalleMoviento {
+  descripcion: string;
+  fecha: string;
+  montoPagado: string;
+  desglose: DesgloseMovimiento[];
+  estado: string;
+}
+
+export interface DesgloseMovimiento {
+  descripcion: string;
+  monto: string;
+}

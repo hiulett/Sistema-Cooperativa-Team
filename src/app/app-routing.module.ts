@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'dasboard',
     loadChildren: () => import('./members/dashboard/dashboard-routing.module').then( m => m.DashboardPageRoutingModule)
   },
+  {
+    path: 'movement-detail/:id',
+    loadChildren: () => import('./movement-detail/movement-detail.module').then( m => m.MovementDetailPageModule)
+  },
+
 
  
 ];
