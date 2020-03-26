@@ -36,7 +36,7 @@ export class EventsService {
 
   public  GetUserAccountsTransactionsDetails(productnumber: string): Observable<RootObjectDetails>{
   
-    return this.http.get<RootObjectDetails>(this.urlapiuser +`?productnumber=${productnumber}`);
+    return this.http.get<RootObjectDetails>(this.detailurl +`?productnumber=${productnumber}`);
 
   }
 

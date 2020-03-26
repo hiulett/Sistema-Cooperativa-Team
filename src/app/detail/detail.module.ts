@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DetailPageRoutingModule } from './detail-routing.module';
-
+import { AgGridModule } from 'ag-grid-angular';
 import { DetailPage } from './detail.page';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { DetailPage } from './detail.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailPageRoutingModule
+    DetailPageRoutingModule, AgGridModule.withComponents([]) 
   ],
   declarations: [DetailPage]
 })

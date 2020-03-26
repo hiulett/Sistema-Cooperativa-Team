@@ -30,6 +30,8 @@
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.2.0",
     "add": "^2.0.6",
+    "ag-grid-angular": "^22.1.1",
+    "ag-grid-community": "^22.1.1",
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
