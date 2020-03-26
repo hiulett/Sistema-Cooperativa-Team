@@ -20,38 +20,24 @@
   </ion-item>
 <ion-item>
   <ion-item>
-    <ion-label>Productos</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+    <ion-label>Producto:</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One" (ionChange)="onItemSelection($event)">
+      <ion-select-option *ngFor="let key of listaproductos" value="{{key.ProductoId}}">{{key.ProductoDescripcion}}</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-item>
 <ion-grid>
   <ion-row>
-		<ion-col size="4">Detalle</ion-col>
-    <ion-col size="2">Retiro</ion-col>
-    <ion-col size="3">Depositos</ion-col>
-		<ion-col size="2">Saldo</ion-col>
+		<ion-col size="8">Movimiento</ion-col>
+		<ion-col size="2">Monto</ion-col>
 	</ion-row>
-  <ion-row *ngFor="let valores of movimientos">
-
-    
-      <ion-col size="4" size-md (click)="navigate(valores.IdMovimiento)">
-        {{valores.Detalle}}
-      </ion-col>
-      <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)">
-        {{valores.Retiro}}
-      </ion-col>
-      <ion-col size="3" size-md (click)="navigate(valores.IdMovimiento)">
-        {{valores.Depositos}}
-      </ion-col>
-      <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)">
-        {{valores.Saldo}}
-      </ion-col>
-    
+  <ion-row *ngFor="let valores of movimientos" >
+    <ion-col size="8" size-md (click)="navigate(valores.IdMovimiento)>
+      <p>{{valores.Detalle}}</p>
+    </ion-col>
+    <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)>
+      <p [ngStyle]="{'color':getColor(valores.TipoMovimientoId)}"> {{valores.Monto}}</p>
+    </ion-col>
 
   </ion-row>
 
