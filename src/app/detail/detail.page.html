@@ -2,9 +2,12 @@
   <ion-toolbar class="ionbartool">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
+
     <ion-label>App BI</ion-label>
     <ion-button slot="end" (click)="logout()">
+
       <ion-icon slot="icon-only" name="log-out"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -12,7 +15,7 @@
 <ion-content>
   <ion-item class="separator1">
     <ion-text color="dark">
-      <ion-icon item-left name="person"></ion-icon>  Te damos la bienvenida {{ nombreUsuario }}!
+      <ion-icon item-left name="person"></ion-icon>  Te damos la bienvenida!
     </ion-text>
   </ion-item>
 <ion-item>
@@ -29,12 +32,13 @@
 		<ion-col size="2">Monto</ion-col>
 	</ion-row>
   <ion-row *ngFor="let valores of movimientos" >
-    <ion-col size="8" size-md>
+    <ion-col size="8" size-md (click)="navigate(valores.IdMovimiento)>
       <p>{{valores.Detalle}}</p>
     </ion-col>
-    <ion-col size="2" size-md >
+    <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)>
       <p [ngStyle]="{'color':getColor(valores.TipoMovimientoId)}"> {{valores.Monto}}</p>
     </ion-col>
+
   </ion-row>
 
  

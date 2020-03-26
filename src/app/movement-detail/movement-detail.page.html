@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar class="ionbartool">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-label>App BI</ion-label>
+    <ion-button slot="end" (click)="logout()">
+
+      <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item class="separator1">
+    <ion-text color="dark">
+      <ion-icon src="assets/svg/newspaper.svg"></ion-icon> Detalle de Movimiento
+    </ion-text>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-item>
+        <ion-col size="5">
+          <ion-label style="color: #2a52be;">Descripcion:</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input readonly color="dark" style="font-size: 14px;">{{ descripcion }}</ion-input>
+        </ion-col>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-col size="5">
+          <ion-label style="color: #2a52be;">Fecha:</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input readonly color="dark" style="font-size: 14px;">{{ fecha }}</ion-input>
+        </ion-col>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item style="padding-bottom: 13px;">
+        <ion-col size="5">
+          <ion-label style="color: #2a52be;">Monto Pagado:</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input readonly color="dark" style="font-size: 14px;">${{ montoPagado }}</ion-input>
+        </ion-col>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5">
+        <ion-label  style="font-size: 17px; padding-left: 15px; color: #2a52be;">Desglose:</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        <ion-label  *ngFor="let x of desglose" >
+          <p style="font-size: 14px;">${{ x.monto }} ({{ x.descripcion }})</p>
+        </ion-label>
+      </ion-col>  
+    </ion-row>
+    <ion-row>
+      <ion-item style="border-top: solid;border-color: lightgrey; border-width: thin;">
+        <ion-col size="5">
+          <ion-label style="color: #2a52be;">Estado:</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          <div *ngIf="estado == 'R'; else elseBlock"><ion-input readonly style="color: green; font-size: 14px;">Realizada <ion-icon name="checkmark" style="padding-left: 3px"></ion-icon></ion-input></div>
+          <ng-template #elseBlock><ion-input readonly>Otra</ion-input></ng-template>
+        </ion-col>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+
+  
+
+  
+</ion-content>

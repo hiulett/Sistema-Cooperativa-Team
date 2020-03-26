@@ -1,5 +1,7 @@
 {
+
   "appId": "io.ionic.starter",
+
   "appName": "proappbi",
   "bundledWebRuntime": false,
   "npmClient": "npm",

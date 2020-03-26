@@ -34,21 +34,21 @@ export class LoginPage implements OnInit {
    async login() {
 
     const loading = await this.loadingController.create({
-      message: 'Please wait...',
+      message: 'Por favor espere...',
       duration: 2000
     });
     await loading.present();
 
- 
+ /* 
     this.Response =  await this.eventService.ValidateUser(this.username, this.password).toPromise();
     this.islogin  = this.Response.IsLogin
     
-    if(this.islogin === 'true'){ 
+    if(this.islogin === 'true'){  */
 
       this.authService.login(this.username, this.password);
       
        const { role, data } = await loading.onDidDismiss();
-
+/* 
       this.username = '';
       this.password = '';
     
@@ -61,13 +61,13 @@ export class LoginPage implements OnInit {
 
       this.password = '';
 
-    } 
+    }  */
   }
 
   async presentAlertWrongUser() {
     const alert = await this.alertController.create({
       header: 'Acceso incorrecto',
-      message: 'Por favor colocar el usuario y password.',
+      message: 'Por favor verifique.',
       buttons: ['OK']
     });
 

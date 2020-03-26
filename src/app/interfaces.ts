@@ -85,6 +85,20 @@ export interface ResumenModelList {
 }
 
 
+export interface DetalleMoviento {
+  descripcion: string;
+  fecha: string;
+  montoPagado: string;
+  desglose: DesgloseMovimiento[];
+  estado: string;
+}
+
+export interface DesgloseMovimiento {
+  descripcion: string;
+  monto: string;
+}
+
+
 /////////////////////////////////
 
 
@@ -117,4 +131,5 @@ export interface RootProductList {
   ResumenModelList?: any;
   ResumenModel: ResumenModel;
 }
+
 
