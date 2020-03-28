@@ -15,32 +15,47 @@
 <ion-content>
   <ion-item class="separator1">
     <ion-text color="dark">
-      <ion-icon item-left name="person"></ion-icon>  Te damos la bienvenida!
+      <ion-icon src="assets/svg/newspaper.svg"></ion-icon> Detalle de Producto
     </ion-text>
   </ion-item>
 <ion-item>
-  <ion-item>
-    <ion-label>Producto:</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One" (ionChange)="onItemSelection($event)">
-      <ion-select-option *ngFor="let key of listaproductos" value="{{key.ProductoId}}">{{key.ProductoDescripcion}}</ion-select-option>
+  <ion-item >
+    <ion-label style="color: #2a52be;">Producto:</ion-label>
+    <ion-select style="width: 212px; color:black; font-size: 13px;" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccione" (ionChange)="onItemSelection($event)">
+      <ion-select-option *ngFor="let key of listaproductos" value="{{key.ProductoId}}"><p style="font-size: 13px !important;">{{key.ProductoDescripcion}}</p></ion-select-option>
     </ion-select>
   </ion-item>
 </ion-item>
-<ion-grid>
-  <ion-row>
-		<ion-col size="8">Movimiento</ion-col>
-		<ion-col size="2">Monto</ion-col>
-	</ion-row>
-  <ion-row *ngFor="let valores of movimientos" >
-    <ion-col size="8" size-md (click)="navigate(valores.IdMovimiento)>
-      <p>{{valores.Detalle}}</p>
-    </ion-col>
-    <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)>
-      <p [ngStyle]="{'color':getColor(valores.TipoMovimientoId)}"> {{valores.Monto}}</p>
-    </ion-col>
-
-  </ion-row>
-
+<ion-card>
  
+<ion-grid>
+  <ion-card-header style="--background: #C2DFFF; color: black; font-weight: bold;">
+    <ion-row >
+      <ion-col size="8" size-md>Movimiento</ion-col>
+     
+      <ion-col size="3" size-md>Monto</ion-col>
+    
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content style="padding-top: 20px;">
+  <ion-row *ngFor="let valores of movimientos" >
+    <ion-col size="8" size-md (click)="navigate(valores.IdMovimiento)">
+      <p style="color: #2a52be;">{{valores.Detalle}}</p>
+    </ion-col>
+    <ion-col size="3" size-md (click)="navigate(valores.IdMovimiento)">
+      <p [ngStyle]="{'color':getColor(valores.TipoMovimientoId)}"> S/{{valores.Monto}} </p>
+    </ion-col>
+  </ion-row>
+</ion-card-content>
 </ion-grid>
+
+</ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="ionfootertool">
+   <ion-text>
+      BI Solutions 2020 - Version 1.0
+   </ion-text>
+  </ion-toolbar>
+</ion-footer>
