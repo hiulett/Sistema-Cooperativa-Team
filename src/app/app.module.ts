@@ -16,12 +16,23 @@ import { environment } from '../environments/environment';
 import { AgGridModule } from 'ag-grid-angular';
 import { HTTP } from '@ionic-native/http/ngx';
 import { MenuComponent } from './menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   entryComponents: [],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, 
-    IonicStorageModule.forRoot(), ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), AgGridModule.withComponents([]) ],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule, 
+    HttpClientModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    IonicStorageModule.forRoot(), 
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
+    AgGridModule.withComponents([]) ,
+    MatExpansionModule
+  ],
   providers: [
     StatusBar,
     HttpClientModule,
