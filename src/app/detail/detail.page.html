@@ -32,10 +32,10 @@
 		<ion-col size="2">Monto</ion-col>
 	</ion-row>
   <ion-row *ngFor="let valores of movimientos" >
-    <ion-col size="8" size-md (click)="navigate(valores.IdMovimiento)>
+    <ion-col size="8" size-md (click)="navigate(valores.IdMovimiento)">
       <p>{{valores.Detalle}}</p>
     </ion-col>
-    <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)>
+    <ion-col size="2" size-md (click)="navigate(valores.IdMovimiento)">
       <p [ngStyle]="{'color':getColor(valores.TipoMovimientoId)}"> {{valores.Monto}}</p>
     </ion-col>
 
