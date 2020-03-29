@@ -51,15 +51,15 @@ export class DetailPage implements OnInit {
   }
 
   public async onItemSelection(selection) {
-    if ( selection != undefined) {
-    console.log("item selected: "+ selection.detail.value);
-    this.root = await this.eventService.GetUserAccountsTransactionsDetails(selection.detail.value).toPromise();
-    this.movimientos = []
-    this.movimientos = this.root.ResumenModelList
+    if (selection != undefined) {
+      console.log("item selected: " + selection.detail.value);
+      this.root = await this.eventService.GetUserAccountsTransactionsDetails(selection.detail.value).toPromise();
+      this.movimientos = []
+      this.movimientos = this.root.ResumenModelList
     } else {
-    console.log("no item selected");
+      console.log("no item selected");
     }
-    }
+  }
 
     public getColor(tipo) {
       return this.colors.filter(item => item.tipo === tipo)[0].color 

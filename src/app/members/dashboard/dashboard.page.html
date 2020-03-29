@@ -53,10 +53,10 @@
     </ion-row>
     <ion-row>
       <ion-col size="6">
-        <ion-label color="primary" style="text-align: center;">{{ depositoInversion }}</ion-label>
+        <ion-label color="primary" style="text-align: center;">S/{{ depositoInversion }}</ion-label>
       </ion-col>
       <ion-col size="6">
-        <ion-label color="primary" style="text-align: center;">{{ creditoPrestamo }}</ion-label>
+        <ion-label color="primary" style="text-align: center;">S/{{ creditoPrestamo }}</ion-label>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -91,7 +91,7 @@
                 <ion-label color="dark" style="font-size: 15px;">Disponible</ion-label>
               </ion-col>
               <ion-col size="6">
-                <ion-label color="primary" style="font-size: 15px;">{{ x.Disponible }}</ion-label>
+                <ion-label color="primary" style="font-size: 15px;">S/{{ x.Disponible }}</ion-label>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -99,7 +99,7 @@
                 <ion-label color="dark" style="font-size: 15px;">Saldo Total</ion-label>
               </ion-col>
               <ion-col size="6">
-                <ion-label color="primary" style="font-size: 15px;">{{ x.SaldoTotal }}</ion-label>
+                <ion-label color="primary" style="font-size: 15px;">S/{{ x.SaldoTotal }}</ion-label>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -110,3 +110,10 @@
 </ion-grid>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar class="ionfootertool">
+   <ion-text>
+      BI Solutions 2020 - Version 1.0
+   </ion-text>
+  </ion-toolbar>
+</ion-footer>
